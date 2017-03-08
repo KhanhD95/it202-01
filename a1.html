@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+ 
+<script>
+function  f() 
+
+{
+
+	//block if no radio is checked
+
+	var ptrA = document.getElementById("A");
+	var ptrW = document.getElementById("W");
+	var ptrD = document.getElementById("D");
+
+	var ptrUser = document.getElementById("user");
+	var userValue = ptrUser.value;
+	var trimmedUserValue = userValue.trim();
+	
+	var ptrPass = document.getElementById("pass");
+	var passValue = ptrPass.value;
+	var trimmedPassValue = passValue.trim();
+ 	
+	
+	//input fields    	.value		(string)
+	//radio and boxes 	.checked	(boolean)
+	
+	if (!ptrA.checked && !ptrW.checked && !ptrD.checked)
+	{
+		alert ('Choose an input');
+		return false; 
+		
+	}
+	
+	if (trimmedUserValue == "")
+	{
+		alert ('Invalid input');
+		return false;
+		//fix for multiple spaces -- use javascript trim function
+		//var s 	then 	s.trim()
+		
+	}
+	
+	if (trimmedPassValue == "")
+	{
+		alert ('Invalid input');
+		return false;
+		
+	}
+}
+</script>
+
+<style>
+
+fieldset 
+{
+	border-radius: 25px;
+    border: 1px solid #1E90FF;
+    padding: margin; 
+    width: 25%;
+    height: margin;
+
+}
+
+</style>
+
+<form action ="a1.php" onsubmit = "f()">
+
+<fieldset style= "background: #00FFA2" >
+
+User: &nbsp&nbsp&nbsp&nbsp&nbsp <input type = text   name ="user"  id ="user" 
+		autocomplete = "off"	
+		required
+		autofocus = "on"
+		placeholder = "Enter User"
+		><br><br>
+	
+	
+Password: &nbsp <input type = text   name = "pass"  id="pass" 
+		autocomplete = "off"
+		required
+		placeholder = "Enter Password"
+		><br><br>
+		
+Amount: &nbsp&nbsp <input type = text name = "amount" id="amount"
+		autocomplete = "off"
+    required
+    placeholder = "Enter Amount"
+		><br><br>
+
+	
+Admin: <input type = radio  name ="type"  id ="A" ><br><br>			
+
+W:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <input type = radio  name ="type"  id ="W" ><br><br>
+
+D:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp	<input type = radio  name ="type"  id ="D" ><br><br>
+	
+Email: <input type = "checkbox" name = "type" id ="Email" ><br><br>
+	
+	<input type = submit>
+
+	
+</fieldset>
+
+
+</form>
